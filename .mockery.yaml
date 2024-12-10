@@ -1,0 +1,8 @@
+with-expecter: true
+packages:
+  github.com/a-novel-kit/certdeck:
+    config:
+      all: True
+      recursive: true
+      outpkg: certdeckmocks
+      dir: mocks

@@ -1,0 +1,45 @@
+linters:
+  enable-all: true
+  disable:
+    # Deprecated linters
+    # TODO: watch for those to be removed from default golangci linters.
+    - exportloopref
+    - gomnd
+    - execinquery
+    # Rules we don't want to enforce
+    - funlen
+    - depguard
+    - gochecknoinits
+    - nlreturn
+    - nonamedreturns
+    - godox
+    - wsl
+    - zerologlint
+    - mnd
+    - gochecknoglobals
+    - gosec
+    - ireturn
+    - wrapcheck
+    - exhaustruct
+    - err113
+    - nestif
+    - godot
+    - cyclop
+    - forcetypeassert
+    - varnamelen
+
+linters-settings:
+  gci:
+    sections:
+      - standard # Standard section: captures all standard packages.
+      - default # Default section: contains all imports that could not be matched to another section type.
+      - prefix(github.com/a-novel-kit)
+      - prefix(github.com/a-novel-kit/certdeck)
+    skip-generated: true
+
+issues:
+  exclude-dirs:
+    - mocks
+    - cmd
+  exclude-files:
+    - ".*_test\\.go"
